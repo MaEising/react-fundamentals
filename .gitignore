@@ -4,4 +4,5 @@ coverage
 build
 .idea/
 .vscode/
+.vscode/*
 .eslintcache
