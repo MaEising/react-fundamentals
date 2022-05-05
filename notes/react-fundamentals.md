@@ -2,6 +2,8 @@
 
 ### Render Hello World with JavaScript
 
+Create HTML Structure Access root node append div to root node
+
 ```
 <body>
   <script type="module">

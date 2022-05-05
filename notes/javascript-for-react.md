@@ -47,3 +47,32 @@ In essence, makeAdder is a function factory. It creates functions that can add a
 specific value to their argument. In this example, two new funcions are created,
 stored in `add5` and `add10`. `add5` adds five to its argument, and `add10`
 adds 10. `add5` and `add10` are both closures.
+
+### Practical Example
+
+Creating interactive Size Buttons, that change the font-size property of the
+body element.
+
+```js
+
+function makeSizer(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  };
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>
+
+```
+
+## Template Literals
