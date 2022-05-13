@@ -13,7 +13,9 @@
     //  className: 'container',
     //  children: 'Hello World',
     //})
-    const element = <div className="Container">Hello World</div>
+    const text = "Hello World"
+    const selfClassName = "Container"
+    const element = <div className={selfClassName}>{text}</div>  // JSX
 
     // 💰 there are a few subtle differences between JSX and HTML. One such
     // difference is how you apply a class to an element in JSX is by using
@@ -21,6 +23,29 @@
     // 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
     // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
-    ReactDOM.createRoot(document.getElementById('root')).render(element)
+/*    What if I have an object of props that I want applied to the `div` like this:
+
+    ```jsx
+    const children = 'Hello World'
+    const className = 'container'
+    const props = {children, className}
+    const element = <div /> // how do I apply props to this div?
+    ```
+
+    If we were doing raw React APIs it would be:
+
+    ```jsx
+    const element = React.createElement('div', props)
+    ```
+
+    Or, it could be written like this:
+
+    ```jsx
+    const element = React.createElement('div', {...props})
+    ```
+*/
+    const props = {children: 'Hello World', className:'container'}
+    const element2 = <div {...props}></div>
+    ReactDOM.createRoot(document.getElementById('root')).render(element2)
   </script>
 </body>
